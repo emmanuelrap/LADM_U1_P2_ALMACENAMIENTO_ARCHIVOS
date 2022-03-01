@@ -5,11 +5,14 @@
       <map>
         <entry key="..\:/Users/EmmanuelZ/AndroidStudioProjects/LADM_U1_P2_ALMACENAMIENTO_ARCHIVOS/app/src/main/res/layout/activity_main.xml" value="0.21" />
         <entry key="..\:/Users/EmmanuelZ/AndroidStudioProjects/LADM_U1_P2_ALMACENAMIENTO_ARCHIVOS/app/src/main/res/layout/app_bar_main.xml" value="0.17028985507246377" />
+        <entry key="..\:/Users/EmmanuelZ/AndroidStudioProjects/LADM_U1_P2_ALMACENAMIENTO_ARCHIVOS/app/src/main/res/layout/card_layout.xml" value="0.21" />
         <entry key="..\:/Users/EmmanuelZ/AndroidStudioProjects/LADM_U1_P2_ALMACENAMIENTO_ARCHIVOS/app/src/main/res/layout/content_main.xml" value="0.17028985507246377" />
         <entry key="..\:/Users/EmmanuelZ/AndroidStudioProjects/LADM_U1_P2_ALMACENAMIENTO_ARCHIVOS/app/src/main/res/layout/fragment_gallery.xml" value="0.21" />
         <entry key="..\:/Users/EmmanuelZ/AndroidStudioProjects/LADM_U1_P2_ALMACENAMIENTO_ARCHIVOS/app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="..\:/Users/EmmanuelZ/AndroidStudioProjects/LADM_U1_P2_ALMACENAMIENTO_ARCHIVOS/app/src/main/res/layout/fragment_slideshow.xml" value="0.17028985507246377" />
-        <entry key="..\:/Users/EmmanuelZ/AndroidStudioProjects/LADM_U1_P2_ALMACENAMIENTO_ARCHIVOS/app/src/main/res/layout/nav_header_main.xml" value="0.17028985507246377" />
+        <entry key="..\:/Users/EmmanuelZ/AndroidStudioProjects/LADM_U1_P2_ALMACENAMIENTO_ARCHIVOS/app/src/main/res/layout/nav_header_main.xml" value="0.25" />
+        <entry key="..\:/Users/EmmanuelZ/AndroidStudioProjects/LADM_U1_P2_ALMACENAMIENTO_ARCHIVOS/app/src/main/res/menu/activity_main_drawer.xml" value="0.33" />
+        <entry key="..\:/Users/EmmanuelZ/AndroidStudioProjects/LADM_U1_P2_ALMACENAMIENTO_ARCHIVOS/app/src/main/res/menu/main.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>
