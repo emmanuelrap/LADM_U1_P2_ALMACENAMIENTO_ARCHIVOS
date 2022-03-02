@@ -8,14 +8,16 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.example.ladm_u1_p2_almacenamiento_archivos.Arreglo.a
+import com.example.ladm_u1_p2_almacenamiento_archivos.Arreglo.b
+import com.example.ladm_u1_p2_almacenamiento_archivos.Arreglo.c
 import com.example.ladm_u1_p2_almacenamiento_archivos.databinding.FragmentGalleryBinding
-import com.example.ladm_u1_p2_almacenamiento_archivos.Arreglo.i
-import com.example.ladm_u1_p2_almacenamiento_archivos.Arreglo.informacion1
-import com.example.ladm_u1_p2_almacenamiento_archivos.Arreglo.informacion2
-import com.example.ladm_u1_p2_almacenamiento_archivos.Arreglo.informacion3
-import com.example.ladm_u1_p2_almacenamiento_archivos.Arreglo.informacion4
-import com.example.ladm_u1_p2_almacenamiento_archivos.Arreglo.y
-import com.example.ladm_u1_p2_almacenamiento_archivos.Arreglo.z
+import com.example.ladm_u1_p2_almacenamiento_archivos.Arreglo.datos1
+import com.example.ladm_u1_p2_almacenamiento_archivos.Arreglo.datos2
+import com.example.ladm_u1_p2_almacenamiento_archivos.Arreglo.datos3
+import com.example.ladm_u1_p2_almacenamiento_archivos.Arreglo.datos4
+import kotlinx.android.synthetic.main.card_layout.*
+import kotlinx.android.synthetic.main.fragment_gallery.*
 
 class GalleryFragment : Fragment() {
     private var _binding: FragmentGalleryBinding? = null
@@ -32,117 +34,65 @@ class GalleryFragment : Fragment() {
         _binding = FragmentGalleryBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        
-        
-        
+
+
+
+
         binding.btn1.setOnClickListener {
-            val espacio = informacion1.size - 1
-
-           /* informacion1[it] = binding.et1.text.toString()
-            informacion2[it] = binding.et2.text.toString()
-            informacion3[it] = binding.et3.text.toString()
-            informacion4[it] = binding.et4.text.toString()*/
-
-            binding.et1.setText("")
-            binding.et2.setText("")
-            binding.et4.setText("")
-            binding.et3.setText("")
-            Toast.makeText(requireContext(), "SE INSERTO CORRECTAMENTE", Toast.LENGTH_LONG).show()
-        }
-
-
-
-        binding.btn2.setOnClickListener {
-            try{
-                y=0
-                z--
-                val espacio =informacion1.size-1
-                (0..espacio).forEach {
-                    if(binding.et3.text.toString().equals(informacion3[it])){
-                        //  z--
-                        i=it
-                        informacion1[it]=""
-                        informacion2[it]=""
-                        informacion3[it]=""
-                        informacion4[it]=""
-                        y=1
-                    }
-                }
-                if(y==0){
-                    AlertDialog.Builder(requireContext())
-                        .setTitle("EL ID BUSCADO NO EXISTE")
-                        .setPositiveButton("ACEPTAR",{d, i->d.dismiss()})
-                        .setNegativeButton("SALIR", {d, i->d.cancel()})
-                        .show()
-                }
-                binding.et1.setText("")
-                binding.et2.setText("")
-                binding.et4.setText("")
-                binding.et3.setText("")
-                Toast.makeText(requireContext(), "SE ELIMINO CORRECTAMENTE", Toast.LENGTH_LONG).show()
-            }catch (e:Exception){
-                AlertDialog.Builder(requireContext())
-                    .setMessage(e.message)
-                    .show()
-            }
-
-        }
-
-
-
-
-        binding.btn3.setOnClickListener {
             try {
-                y=0
-                val espacio = informacion1.size-1
+                b=0
+                val espacio = datos1.size-1
                 (0..espacio).forEach {
-                    if(binding.et3.text.toString().equals(informacion3[it])) {
-                        informacion1[it] = binding.et1.text.toString()
-                        informacion2[it] = binding.et2.text.toString()
-                        informacion3[it] = binding.et3.text.toString()
-                        informacion4[it] = binding.et4.text.toString()
-                        y=1
+                    if (idServicios.text.toString().equals(datos3[it])) {
+                        AlertDialog.Builder(requireContext())
+                            .setTitle("ID Repetido")
+                            .setPositiveButton("OK", { d, i -> d.dismiss() })
+                            .setNegativeButton("EXIT", { d, i -> d.cancel() })
+                            .show()
+                        b = 1
                     }
                 }
-                if(y==0){
-                    AlertDialog.Builder(requireContext())
-                        .setTitle("EL ID BUSCADO NO EXISTE")
-                        .setPositiveButton("ACEPTAR",{d, i->d.dismiss()})
-                        .setNegativeButton("SALIR", {d, i->d.cancel()})
-                        .show()
+                (0..espacio).forEach {
+                    if (datos3[it].isEmpty() && b == 0) {
+                        datos1[it] = binding.nombre.text.toString()
+                        datos2[it] = binding.modelo.text.toString()
+                        datos3[it] = binding.idServicios.text.toString()
+                        datos4[it] = binding.costo.text.toString()
+                        b=1
+                    }
                 }
-                binding.et1.setText("")
-                binding.et2.setText("")
-                binding.et4.setText("")
-                binding.et3.setText("")
-                Toast.makeText(requireContext(), "SE ACTUALIZO CORRECTAMENTE", Toast.LENGTH_LONG).show()
+
             }catch (e:Exception){
                 AlertDialog.Builder(requireContext())
                     .setMessage(e.message)
                     .show()
             }
+            binding.nombre.setText("")
+            binding.modelo.setText("")
+            binding.costo.setText("")
+            binding.idServicios.setText("")
+            Toast.makeText(requireContext(), "Registro Insertado", Toast.LENGTH_LONG).show()
         }
-
-
 
         binding.btn4.setOnClickListener {
             try{
-                y=0
-                val espacio =informacion1.size-1
+                b=0
+                val espacio =datos1.size-1
+
                 (0..espacio).forEach {
-                    if(binding.et3.text.toString().equals(informacion3[it])){
-                        binding.et1.setText(informacion1[it])
-                        binding.et2.setText(informacion2[it])
-                        binding.et3.setText(informacion3[it])
-                        binding.et4.setText(informacion4[it])
-                        y=1
+                    if(idServicios.text.toString().equals(datos3[it])){
+                        binding.nombre.setText(datos1[it])
+                        binding.modelo.setText(datos2[it])
+                        binding.idServicios.setText(datos3[it])
+                        binding.costo.setText(datos4[it])
+                        b=1
                     }
                 }
-                if(y==0){
+                if(b==0){
                     AlertDialog.Builder(requireContext())
-                        .setTitle("EL ID BUSCADO NO EXISTE")
-                        .setPositiveButton("ACEPTAR",{d, i->d.dismiss()})
-                        .setNegativeButton("SALIR", {d, i->d.cancel()})
+                        .setTitle("No Existe ese Servicio")
+                        .setPositiveButton("OK",{d, i->d.dismiss()})
+                        .setNegativeButton("EXIT", {d, i->d.cancel()})
                         .show()
                 }
             }catch (e:Exception){
@@ -151,7 +101,72 @@ class GalleryFragment : Fragment() {
                     .show()
             }
         }
+        binding.btn3.setOnClickListener {
+            try {
+                b=0
+                val espacio = datos1.size-1
+                (0..espacio).forEach {
+                    if(idServicios.text.toString().equals(datos3[it])) {
+                        datos1[it] = binding.nombre.text.toString()
+                        datos2[it] = binding.modelo.text.toString()
+                        datos3[it] = binding.idServicios.text.toString()
+                        datos4[it] = binding.costo.text.toString()
+                        b=1
+                    }
+                }
+                if(b==0){
+                    AlertDialog.Builder(requireContext())
+                        .setTitle("NO COINCIDE EL ID")
+                        .setPositiveButton("OK",{d, i->d.dismiss()})
+                        .setNegativeButton("EXIT", {d, i->d.cancel()})
+                        .show()
+                }
+                binding.nombre.setText("")
+                binding.modelo.setText("")
+                binding.costo.setText("")
+                binding.idServicios.setText("")
+                Toast.makeText(requireContext(), "ACTUALIZACION EXITOSA", Toast.LENGTH_LONG).show()
+            }catch (e:Exception){
+                AlertDialog.Builder(requireContext())
+                    .setMessage(e.message)
+                    .show()
+            }
+        }
+        binding.btn2.setOnClickListener {
+            try{
+                b=0
+                c--
+                val espacio =datos1.size-1
+                (0..espacio).forEach {
+                    if(idServicios.text.toString().equals(datos3[it])){
+                        //  z--
+                        a=it
+                        datos1[it]=""
+                        datos2[it]=""
+                        datos3[it]=""
+                        datos4[it]=""
+                        b=1
+                    }
+                }
+                if(b==0){
+                    AlertDialog.Builder(requireContext())
+                        .setTitle("NO EXISTE")
+                        .setPositiveButton("OK",{d, i->d.dismiss()})
+                        .setNegativeButton("EXIT", {d, i->d.cancel()})
+                        .show()
+                }
+                binding.nombre.setText("")
+                binding.modelo.setText("")
+                binding.costo.setText("")
+                binding.idServicios.setText("")
+                Toast.makeText(requireContext(), "ELIMINACION EXITOSA", Toast.LENGTH_LONG).show()
+            }catch (e:Exception){
+                AlertDialog.Builder(requireContext())
+                    .setMessage(e.message)
+                    .show()
+            }
 
+        }
         return root
     }
 
